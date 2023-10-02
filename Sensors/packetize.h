@@ -11,13 +11,20 @@ Auther: Caleb Malcarne
 
 Date: 9/27/2023
 */
+
+/*
+functions to add:
+packet for transmission 
+prep data for transmission
+*/
+
 float temp, pres, hum, alta, act_rte;
 
 float temp_, pres_, hum_, alta_, act_rte_ = 0;
 
 float a_temp, a_pres, a_hum, a_alta, a_act_rte = 0;
 
-float tolerence = {};
+float tolerence [] = {0.0};
 
 
 
@@ -45,6 +52,7 @@ float avg(int a, int b){
 
 void add_to_queue(sensorPacket packet){
     ;
+    
 }
 
 int check_value(float tolerance_percent, float value, float avg){
@@ -59,9 +67,7 @@ int check_value(float tolerance_percent, float value, float avg){
     valid = value > upper ? 0 : 1;
     valid = value < lower ? 0 : 1;
 
-    if(valid) return value;
-
-    else if (avg = 0) return 0; 
+    if(valid) return value; 
     
     else return avg;
 }   
