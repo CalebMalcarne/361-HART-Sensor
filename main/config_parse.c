@@ -1,11 +1,13 @@
 // you will have to modity the path when you download it, for some reason my computer dosnt liek reltive paths 
 
-#include <C:\Users\caleb\Desktop\361\361-HART-Sensor\main\cJSON\cJSON.h>
+//#include <C:\Users\caleb\Desktop\361\361-HART-Sensor\main\cJSON\cJSON.h>
+#include <\Users\Joseph Malcarne\Desktop\361\361-HART-Sensor\main\cJSON\cJSON.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef struct{
     int error;
+
 } config;
 
 void to_struct(cJSON *root){
@@ -22,16 +24,14 @@ void to_struct(cJSON *root){
             cJSON_ArrayForEach(arrayItem, item) {
                 if (cJSON_IsString(arrayItem)) {
                     printf("  - %s\n", arrayItem->valuestring);
-                } // ... Handle other types within the array as needed
+                }
             }
         }
-        // ... You can expand this to handle other types as well
     }
 }
 
 
 int main(void) {
-    // Read the entire content of the config.cfg file into a string
     FILE *fp = fopen("config.cfg", "r");
     fseek(fp, 0, SEEK_END);
     long fsize = ftell(fp);
